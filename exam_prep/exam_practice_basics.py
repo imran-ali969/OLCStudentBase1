@@ -209,9 +209,13 @@
 
 # Exercise 14: Password Validation
 # Keep asking until user enters a password with length >= 8.
-while True:
-    
-
+# while True:
+#     password = input("Enter a password: ")
+#     if len(password) >= 8:
+#         break
+#     else:
+#         print("Password must have 8 or more digits")
+ 
 
 
 
@@ -219,8 +223,18 @@ while True:
 
 # Exercise 15: Date Validation
 # Keep asking until user enters a date in format MM-YYYY.
-# Ensure the date is between 01-1900 and 09-2025.
+# Ensure the date is between 01-1900 and 12-2025.
 
+
+# while True:
+#     date = input("Enter a date MM-YYYY: ")
+
+#     # date[-4:]
+#     if int(date[:2]) >= 1 and int(date[:2]) <= 12 and int(date[3:7]) >=1900 and int(date[3:7]) <= 2025:
+#         break
+#     else:
+#         print("Date is invalid")
+# print(date[-4:])
 
 
 
@@ -235,9 +249,25 @@ while True:
 # Add only even numbers into even_numbers.
 # Expected Output:
 # [8, 12, 10]
+# even_numbers = []
+# numbers = [3, 8, 12, 7, 10]
+# for num in numbers:
+#     if num % 2 == 0:
+#         even_numbers.append(num)
+# print(even_numbers)
+# modulus is a remainder after a division
+# print(0%2)
+# print(1%2)
+# print(2%2)
+# print(15%2)
+# print(4%2)
 
+# # how many balls can fit into a box, if box can contain only 5 balls
+# # 58 balls
 
-
+# balls = 58
+# boxes = balls % 5
+# print(boxes)
 
 
 # ----------------------------------------------------------------
@@ -247,8 +277,12 @@ while True:
 # Copy only names starting with 'A' into a new list.
 # Expected Output:
 # ["Ali", "Amy"]
-
-
+# names = ["Ali", "Ben", "Amy", "John"]
+# A_names = []
+# for name in names:
+#     if name[0] == "A":
+#         A_names.append(name)
+# print(A_names)
 
 
 
@@ -259,8 +293,12 @@ while True:
 # Copy all scores above 50 into pass_list.
 # Expected Output:
 # [56, 78, 88]
-
-
+# scores = [23, 56, 78, 49, 88]
+# pass_list = []
+# for score in scores:
+#     if score > 50:
+#         pass_list.append(score)
+# print(pass_list)
 
 
 
@@ -271,8 +309,11 @@ while True:
 # Delete all odd numbers.
 # Expected Output:
 # [12, 20]
-
-
+# numbers = [12, 7, 15, 20, 33]
+# for num in numbers:
+#     if num % 2 == 1:
+#         numbers.remove(num)
+# print(numbers)
 
 
 
@@ -284,10 +325,22 @@ while True:
 # Expected Output:
 # ["Sam"]
 
+names = ["Alex", "Max", "Sam","Axel","Maxis","Alice","Joseph","Laura"]
 
+# for name in names:
+#     if "x" in name.lower():
+#         names.remove(name)
 
+# print(names)
 
+# # # assign a new variable to original list
+# names_with_x =["Alex", "Max", "Sam","Axel","Maxis","Alice","Joseph","Laura"]
 
+# for name in names_with_x:
+#     if "x" in name.lower():
+#         names.remove(name)
+
+# print(names)
 # ----------------------------------------------------------------
 
 # Exercise 21: Remove Fail Scores
@@ -487,9 +540,9 @@ while True:
 # Example call: greet("Ali")
 # Expected Output:
 # Hello, Ali, welcome to Computing!
-
-
-
+def greet(name): 
+    print(f"Hello {name}, Welcome to Computing.")
+# greet("Joseph")
 
 
 # ----------------------------------------------------------------
@@ -499,7 +552,10 @@ while True:
 # Example call: square(5)
 # Expected Output:
 # 25
-
+def square(n):
+    square = n ** 2
+    return square
+square(2)
 
 
 
@@ -511,7 +567,10 @@ while True:
 # Example call: add(12, 8)
 # Expected Output:
 # 20
-
+def add(x,y):
+    addi = x + y
+    return addi
+# print(add(12, 8))
 
 
 
@@ -523,7 +582,10 @@ while True:
 # Example call: average([10, 20, 30, 40, 50])
 # Expected Output:
 # 30.0
-
+def average(st):
+    average = sum(st)/len(st)
+    return(average)
+# print(average([10, 20, 30, 40, 50]))
 
 
 
@@ -531,12 +593,16 @@ while True:
 # ----------------------------------------------------------------
 
 # Exercise 39: Reuse Function with List
-# Reuse your add(x, y) function.
 # Write a program that accepts a list of numbers and calculates total sum.
 # Example call: [5, 10, 15, 20]
 # Expected Output:
 # 50
-
+def total_sum(list_numbers):
+    total_sum = sum(numlist)
+    return(total_sum)
+numlist = [5, 10, 15, 20]
+total = total_sum(numlist)
+# print(total)
 
 
 
@@ -545,10 +611,16 @@ while True:
 # Exercise 40: Packing with Floor Division and Modulus
 # Write a function pack_items(total_items, box_size) that:
 # - Calculates how many full boxes can be filled (//).
-# - Calculates leftover items (%).
+
 # Example call: pack_items(257, 7)
 # Expected Output:
-# 36 full boxes, 5 items leftover
+# 36 full boxes
+def pack_items(total_items, box_size):
+    pack_items = total_items//box_size
+    return(pack_items)
+
+
+# print(f"{pack_items(257, 7)} full boxes")
 
 
 
@@ -564,7 +636,8 @@ while True:
 # sentence = "Hello Computing Students"
 
 # write this sentence to a file
-
+with open("test.txt", "w") as f:
+    f.write("Hello Computing Students")
 
 
 # ----------------------------------------------------------------
@@ -573,7 +646,8 @@ while True:
 # Read contents of test.txt and display.
 # Expected Output:
 # Hello Computing Students
-
+# with open("test.txt", "r") as f:
+#     f.read
 
 
 
